@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1f6feb" />
+  <title>puchase — Shop & Payment App</title>
+  <link rel="manifest" href="./manifest.json" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #1f6feb;
+      --success: #2ea043;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+    }
+    .container { max-width: 820px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .price { color: #79c0ff; font-weight: 600; margin: 8px 0 12px; }
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover { opacity: 0.92; }
+    button.secondary { background: #21262d; border: 1px solid var(--border); }
+    button.pay { background: var(--success); width: 100%; margin-top: 12px; }
+    .cart-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    #status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1 style="margin:0;">puchase</h1>
+        <small style="color:var(--muted);">Shop PWA & Payment Handler</small>
+      </div>
+      <button id="installBtn" class="secondary" hidden>Install App</button>
+    </header>
+
+    <section class="grid" id="catalog"></section>
+
+    <section class="card">
+      <h2 style="margin-top:0;">Cart</h2>
+      <div id="cartItems">Your cart is empty.</div>
+      <div id="cartTotal" class="price">Total: ₹0.00</div>
+      <button id="checkoutBtn" class="pay">Pay Now</button>
+    </section>
+
+    <div id="status">Ready.</div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
