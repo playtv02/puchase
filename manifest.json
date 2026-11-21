@@ -1,0 +1,22 @@
+{
+  "name": "puchase — Shop & Checkout",
+  "short_name": "puchase",
+  "description": "Shop catalog, cart, and web payment handler for puchase.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#1f6feb",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192.png?text=puchase",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512.png?text=puchase",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
